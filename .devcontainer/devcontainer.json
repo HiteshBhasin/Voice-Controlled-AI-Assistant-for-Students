@@ -1,0 +1,19 @@
+/ .devcontainer/devcontainer.json
+{
+  "name": "My Project Development Environment",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".." // Points to the root of your repo
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "esbenp.prettier-vscode"
+        // Add any other VS Code extensions you need
+      ]
+    }
+  },
+  "forwardPorts": [3000, 8000], // Example: if your app runs on these ports
+  "postCreateCommand": "npm install && npm run build" // Example: run commands after container creation
+}
